@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heritage Consultancy – Your Career Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2744;
+  --gold: #b8922a;
+  --gold-light: #d4a843;
+  --cream: #f8f5ef;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --light-gray: #f3f4f6;
+  --border: #e5e1d8;
+  --green: #16a34a;
+  --whatsapp: #25d366;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;}
+
+/* ── NAVBAR ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 20px rgba(26,39,68,0.08);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:46px;width:auto;}
+.nav-logo-txt{line-height:1.2;}
+.nav-logo-txt strong{display:block;font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);font-weight:700;}
+.nav-logo-txt span{font-size:0.68rem;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;}
+.nav-links{display:flex;align-items:center;gap:22px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--navy);font-weight:500;font-size:0.88rem;letter-spacing:0.02em;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important;}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{background:var(--gold)!important;color:#fff!important;}
+.dark-toggle{background:none;border:1.5px solid var(--border);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:0.82rem;color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:500;transition:all 0.2s;white-space:nowrap;}
+.dark-toggle:hover{border-color:var(--gold);color:var(--gold);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s;}
+
+/* Mobile nav */
+#navLinks{display:flex;}
+@media(max-width:900px){
+  #navLinks{display:none;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:#fff;padding:16px 5% 24px;border-bottom:1px solid var(--border);gap:4px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+  #navLinks.open{display:flex;}
+  #navLinks li{width:100%;}
+  #navLinks a{display:block;padding:11px 0;border-bottom:1px solid var(--border);font-size:0.95rem;}
+  #navLinks .nav-cta{margin-top:8px;text-align:center;border-radius:8px!important;padding:12px!important;}
+  .hamburger{display:flex;}
+  .dark-toggle{display:none;}
+}
+
+/* ── WHATSAPP STICKY BANNER ── */
+.wa-top-bar{background:linear-gradient(90deg,#075e54,#128c7e 50%,#25d366);color:#fff;text-align:center;padding:9px 16px;font-size:0.88rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;position:fixed;top:68px;left:0;right:0;z-index:998;box-shadow:0 2px 10px rgba(0,0,0,0.12);}
+.wa-top-bar a{color:#fff;text-decoration:none;border:2px solid rgba(255,255,255,0.65);border-radius:20px;padding:4px 14px;font-size:0.82rem;transition:background 0.2s;white-space:nowrap;}
+.wa-top-bar a:hover{background:rgba(255,255,255,0.2);}
+.wa-pulse{animation:waPulse 2.5s infinite;}
+@keyframes waPulse{0%,100%{opacity:1;}50%{opacity:0.7;}}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:linear-gradient(135deg,#0f1c35 0%,#1a2744 55%,#22305a 100%);display:flex;align-items:center;justify-content:center;padding:130px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");}
+/* logo watermark in hero */
+.hero-logo-watermark{position:absolute;right:4%;bottom:0;width:38%;max-width:420px;opacity:0.07;pointer-events:none;filter:brightness(0) invert(1);}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1200px;width:100%;z-index:1;}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.4rem);color:#fff;line-height:1.2;margin-bottom:18px;}
+.hero-text h1 span{color:var(--gold-light);}
+.hero-text p{color:rgba(255,255,255,0.72);font-size:1rem;line-height:1.75;margin-bottom:28px;max-width:480px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:#fff;padding:13px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block;transition:all 0.2s;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(184,146,42,0.4);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,146,42,0.5);}
+.btn-outline{background:transparent;color:#fff;padding:13px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,0.38);transition:all 0.2s;}
+.btn-outline:hover{background:rgba(255,255,255,0.08);border-color:#fff;}
+.hero-stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold-light);font-weight:700;}
+.stat-label{color:rgba(255,255,255,0.55);font-size:0.78rem;margin-top:2px;letter-spacing:0.5px;}
+.hero-visual{display:flex;align-items:center;justify-content:center;position:relative;}
+.hero-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:32px;text-align:center;width:100%;max-width:320px;animation:float 4s ease-in-out infinite;}
+.hero-card img{width:180px;height:auto;}
+.hero-card-text{color:rgba(255,255,255,0.78);font-size:0.88rem;margin-top:14px;font-style:italic;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+/* ── FEATURED HIGHLIGHTS (govt/metro/bank) ── */
+.featured-strip{background:var(--navy);padding:36px 5%;}
+.featured-strip-inner{max-width:1100px;margin:0 auto;}
+.featured-strip h3{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:20px;text-align:center;}
+.featured-strip h3 span{color:var(--gold-light);}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.feat-card{background:rgba(255,255,255,0.06);border:1px solid rgba(184,146,42,0.28);border-radius:12px;padding:16px 14px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:all 0.22s;text-decoration:none;}
+.feat-card:hover{background:rgba(184,146,42,0.1);border-color:var(--gold);transform:translateY(-3px);}
+.feat-card.hot{border-color:var(--gold);background:rgba(184,146,42,0.08);}
+.feat-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+.feat-info strong{display:block;color:#fff;font-size:0.88rem;font-weight:600;line-height:1.3;}
+.feat-info span{color:rgba(255,255,255,0.55);font-size:0.75rem;}
+.feat-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.65rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:5px;letter-spacing:0.5px;}
+
+/* ── SECTIONS ── */
+section{padding:60px 5%;}
+.section-header{text-align:center;margin-bottom:40px;}
+.section-tag{display:inline-block;background:rgba(184,146,42,0.12);color:var(--gold);padding:5px 14px;border-radius:20px;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);line-height:1.3;}
+.section-subtitle{color:var(--gray);font-size:0.98rem;margin-top:10px;max-width:520px;margin-inline:auto;line-height:1.65;}
+
+/* ── WHATSAPP CHANNEL SECTION ── */
+.wa-section{background:linear-gradient(135deg,#075e54,#128c7e);}
+.wa-channel-box{max-width:700px;margin:0 auto;text-align:center;}
+.wa-channel-box h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px;}
+.wa-channel-box p{color:rgba(255,255,255,0.8);font-size:0.98rem;line-height:1.7;margin-bottom:28px;}
+.wa-join-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#075e54;padding:15px 36px;border-radius:30px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:all 0.2s;box-shadow:0 6px 24px rgba(0,0,0,0.2);}
+.wa-join-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+.wa-features{display:flex;gap:20px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+.wa-feature{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:10px 18px;color:#fff;font-size:0.85rem;font-weight:500;}
+
+/* ── CATEGORIES ── */
+.categories-bg{background:var(--cream);}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:14px;max-width:1100px;margin:0 auto;}
+.cat-card{background:var(--white);border-radius:12px;padding:22px 16px;text-align:center;border:1px solid var(--border);transition:all 0.22s;cursor:pointer;text-decoration:none;color:var(--navy);}
+.cat-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 10px 28px rgba(184,146,42,0.15);}
+.cat-icon{font-size:2rem;margin-bottom:10px;display:block;}
+.cat-name{font-weight:600;font-size:0.9rem;}
+.cat-count{color:var(--gray);font-size:0.78rem;margin-top:3px;}
+
+/* ── JOBS ── */
+.jobs-section{background:var(--white);}
+.search-bar{display:flex;gap:10px;max-width:600px;margin:0 auto 28px;flex-wrap:wrap;}
+.search-bar input{flex:1;min-width:200px;padding:13px 16px;border:2px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.92rem;outline:none;color:var(--navy);transition:border-color 0.2s;}
+.search-bar input:focus{border-color:var(--gold);}
+.search-bar button{background:var(--navy);color:#fff;padding:13px 22px;border-radius:10px;border:none;cursor:pointer;font-weight:600;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.search-bar button:hover{background:var(--gold);}
+.filter-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+.filter-tab{padding:7px 16px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;font-size:0.84rem;font-weight:500;transition:all 0.2s;font-family:'DM Sans',sans-serif;color:var(--navy);}
+.filter-tab.active,.filter-tab:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;max-width:1100px;margin:0 auto;}
+.job-card{background:var(--white);border:1px solid var(--border);border-radius:13px;padding:20px;transition:all 0.22s;cursor:default;}
+.job-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(26,39,68,0.11);border-color:var(--gold);}
+.job-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.job-icon-wrap{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#2d4080);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.job-info h3{font-size:0.95rem;font-weight:600;color:var(--navy);}
+.job-info .industry{color:var(--gray);font-size:0.78rem;margin-top:2px;}
+.job-desc{color:var(--gray);font-size:0.84rem;line-height:1.6;margin-bottom:12px;}
+.job-rating{display:flex;align-items:center;gap:6px;margin-bottom:12px;}
+.stars{color:#f59e0b;font-size:0.88rem;}
+.rating-text{font-size:0.78rem;color:var(--gray);}
+.btn-consult{width:100%;background:var(--navy);color:#fff;border:none;border-radius:8px;padding:10px;font-weight:600;font-size:0.87rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.btn-consult:hover{background:var(--gold);}
+
+/* ── SERVICES ── */
+.services-bg{background:var(--cream);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+.service-card{background:var(--white);border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all 0.22s;}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(26,39,68,0.11);}
+.service-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,var(--navy),#2d4080);}
+.service-body{padding:20px;}
+.service-body h3{font-size:1rem;font-weight:600;margin-bottom:7px;}
+.service-body p{color:var(--gray);font-size:0.85rem;line-height:1.6;margin-bottom:14px;}
+
+/* ── INDUSTRIES ── */
+.industries-strip{background:var(--navy);padding:50px 5%;text-align:center;}
+.industries-strip h2{font-family:'Playfair Display',serif;color:#fff;font-size:1.7rem;margin-bottom:26px;}
+.industry-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:860px;margin:0 auto;}
+.industry-tag{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.82);padding:9px 16px;border-radius:24px;font-size:0.87rem;transition:all 0.2s;cursor:pointer;}
+.industry-tag:hover{background:var(--gold);border-color:var(--gold);color:#fff;}
+
+/* ── FAQ ── */
+.faq-bg{background:var(--white);}
+.faq-list{max-width:720px;margin:0 auto;}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:box-shadow 0.2s;}
+.faq-item:hover{box-shadow:0 4px 18px rgba(26,39,68,0.08);}
+.faq-q{width:100%;text-align:left;padding:18px 22px;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.95rem;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.faq-q .arrow{color:var(--gold);font-size:1.2rem;transition:transform 0.3s;flex-shrink:0;}
+.faq-q.open .arrow{transform:rotate(45deg);}
+.faq-a{padding:0 22px;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s;color:var(--gray);line-height:1.7;font-size:0.92rem;}
+.faq-a.open{max-height:300px;padding:0 22px 18px;}
+
+/* ── CONTACT ── */
+.contact-bg{background:linear-gradient(135deg,#1a2744 0%,#22305a 100%);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;max-width:1000px;margin:0 auto;}
+.contact-info h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#fff;margin-bottom:22px;}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
+.contact-icon{width:42px;height:42px;border-radius:10px;background:rgba(184,146,42,0.18);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.contact-detail h4{color:var(--gold-light);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;}
+.contact-detail p{color:rgba(255,255,255,0.78);font-size:0.92rem;line-height:1.6;}
+.contact-detail a{color:var(--gold-light);text-decoration:none;}
+.contact-detail a:hover{text-decoration:underline;}
+.map-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:22px;margin-top:24px;}
+.map-card h4{color:var(--gold-light);font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;}
+.timing-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+.timing-row:last-child{border-bottom:none;}
+.timing-row span:first-child{color:rgba(255,255,255,0.58);font-size:0.88rem;}
+.timing-row span:last-child{color:#fff;font-weight:600;font-size:0.88rem;}
+/* Contact reach box (replaces form) */
+.reach-box{background:rgba(255,255,255,0.06);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:32px;}
+.reach-box h3{color:#fff;font-size:1.2rem;margin-bottom:6px;font-weight:600;}
+.reach-box p{color:rgba(255,255,255,0.6);font-size:0.88rem;margin-bottom:24px;line-height:1.6;}
+.reach-action{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 18px;text-decoration:none;color:#fff;transition:all 0.22s;margin-bottom:14px;}
+.reach-action:hover{background:rgba(184,146,42,0.15);border-color:var(--gold);}
+.reach-action-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.reach-action-icon.wa{background:#25d366;}
+.reach-action-icon.call{background:var(--gold);}
+.reach-action-icon.ch{background:#128c7e;}
+.reach-action strong{display:block;font-size:0.95rem;font-weight:600;}
+.reach-action span{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+.office-note{background:rgba(184,146,42,0.12);border:1px solid rgba(184,146,42,0.3);border-radius:10px;padding:14px 16px;font-size:0.85rem;color:var(--gold-light);font-weight:500;line-height:1.65;margin-top:8px;}
+
+/* ── CTA BANNER ── */
+.cta-banner{background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:60px 5%;text-align:center;}
+.cta-banner h2{font-family:'Playfair Display',serif;color:#fff;font-size:1.9rem;margin-bottom:14px;}
+.cta-banner p{color:rgba(255,255,255,0.85);margin-bottom:28px;font-size:1rem;}
+.btn-white{background:#fff;color:var(--navy);padding:14px 34px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.14);}
+
+/* ── FOOTER ── */
+footer{background:#0d1526;color:rgba(255,255,255,0.58);padding:38px 5%;text-align:center;}
+footer img{height:44px;margin-bottom:12px;opacity:0.8;}
+footer p{font-size:0.85rem;line-height:1.8;}
+footer a{color:var(--gold-light);text-decoration:none;}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;right:28px;z-index:9999;background:var(--green);color:#fff;padding:13px 22px;border-radius:10px;font-weight:600;transform:translateY(100px);opacity:0;transition:all 0.35s;box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* ── DARK MODE ── */
+body.dark{background:#0a1020;--white:#0a1020;--navy:#e8eaf0;--cream:#111827;--border:#2a3550;--gray:#9ca3af;}
+body.dark nav{background:rgba(10,16,32,0.97);}
+body.dark .job-card,body.dark .service-card,body.dark .cat-card,body.dark .faq-item{background:#111827;}
+body.dark .faq-q{color:#e8eaf0;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:32px;}
+  .hero-text p{max-width:100%;}
+  .hero-btns{justify-content:center;}
+  .hero-stats{justify-content:center;}
+  .hero-visual{display:none;}
+  .hero-logo-watermark{display:none;}
+  .contact-grid{grid-template-columns:1fr;gap:32px;}
+  .feat-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}
+}
+@media(max-width:600px){
+  section{padding:44px 4%;}
+  .hero{padding:120px 4% 50px;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .wa-features{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="#home">
+    <img src="/mnt/user-data/uploads/1776619121904_WhatsApp_Image_2026-04-19_at_10_36_17_PM.jpeg" alt="Heritage Consultancy Logo" onerror="this.style.display='none'">
+    <div class="nav-logo-txt">
+      <strong>Heritage Consultancy</strong>
+      <span>Your Career Partner</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#jobs">Jobs</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:+917011271510" class="nav-cta">📞 Call Now</a></li>
+  </ul>
+  <button class="dark-toggle" onclick="toggleDark()">🌙 Dark</button>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- WHATSAPP TOP BAR -->
+<div class="wa-top-bar">
+  <span class="wa-pulse">📲</span>
+  <span>Get <strong>Daily Job Vacancies</strong> — Join our WhatsApp Channel!</span>
+  <a href="https://whatsapp.com/channel/0029Vas5xvZKbYMFGb9Gh53k" target="_blank">Join Now →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <!-- Logo watermark blended in hero background -->
+  <img class="hero-logo-watermark" src="/mnt/user-data/uploads/1776619121904_WhatsApp_Image_2026-04-19_at_10_36_17_PM.jpeg" alt="">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Your Dream Job<br>Starts <span>Here</span></h1>
+      <p>Heritage Consultancy connects talented professionals with top employers across Private Sector, Government, Banking, Delhi Metro, AIIMS & Railways — PAN India coverage.</p>
+      <div class="hero-btns">
+        <a href="#jobs" class="btn-gold">🔍 Browse Jobs</a>
+        <a href="https://wa.me/917011271510?text=Hi%2C%20I%20want%20to%20consult%20about%20job%20placement." target="_blank" class="btn-outline">💬 WhatsApp Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Job Roles</div></div>
+        <div class="stat"><div class="stat-num">PAN</div><div class="stat-label">India Coverage</div></div>
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Industries</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="/mnt/user-data/uploads/1776619121904_WhatsApp_Image_2026-04-19_at_10_36_17_PM.jpeg" alt="Heritage Consultancy" onerror="this.style.display='none'">
+        <div class="hero-card-text">"Bridging talent with opportunity — PAN India"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED HIGHLIGHTS -->
+<div class="featured-strip">
+  <div class="featured-strip-inner">
+    <h3>⭐ <span>Highlighted Opportunities</span> — High Demand Roles</h3>
+    <div class="feat-grid">
+      <a href="#contact" class="feat-card hot">
+        <div class="feat-icon">🏛️</div>
+        <div class="feat-info"><strong>Govt Contractual Jobs</strong><span>Central & State Depts</span><br><span class="feat-badge">🔥 HOT</span></div>
+      </a>
+      <a href="#contact" class="feat-card hot">
+        <div class="feat-icon">🚇</div>
+        <div class="feat-info"><strong>Delhi Metro — DMRC</strong><span>Token Op · Loco Pilot · CFA</span><br><span class="feat-badge">🔥 HOT</span></div>
+      </a>
+      <a href="#contact" class="feat-card hot">
+        <div class="feat-icon">🏦</div>
+        <div class="feat-info"><strong>Bank Jobs</strong><span>Kotak·ICICI·HDFC·AXIS·Muthoot</span><br><span class="feat-badge">🔥 HOT</span></div>
+      </a>
+      <a href="#contact" class="feat-card">
+        <div class="feat-icon">🏥</div>
+        <div class="feat-info"><strong>AIIMS — All India</strong><span>Nursing · Lab · Admin</span><br><span class="feat-badge">FEATURED</span></div>
+      </a>
+      <a href="#contact" class="feat-card">
+        <div class="feat-icon">🚂</div>
+        <div class="feat-info"><strong>Indian Railway / IRCTC</strong><span>Multiple Zones</span><br><span class="feat-badge">FEATURED</span></div>
+      </a>
+      <a href="#contact" class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-info"><strong>TATA Power / IGL</strong><span>Meter Reading Jobs</span><br><span class="feat-badge">FEATURED</span></div>
+      </a>
+      <a href="#contact" class="feat-card">
+        <div class="feat-icon">🌾</div>
+        <div class="feat-info"><strong>FSSAI Jobs</strong><span>Technical & Admin</span><br><span class="feat-badge">FEATURED</span></div>
+      </a>
+      <a href="#contact" class="feat-card">
+        <div class="feat-icon">🏠</div>
+        <div class="feat-info"><strong>Work From Home</strong><span>Genuine Remote Roles</span><br><span class="feat-badge">FEATURED</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP CHANNEL SECTION -->
+<section class="wa-section" id="whatsapp">
+  <div class="wa-channel-box">
+    <div style="font-size:3rem;margin-bottom:14px;">📲</div>
+    <h2>Join Our Official WhatsApp Channel</h2>
+    <p>Get <strong>daily job vacancy alerts</strong> for Private, Government, Bank, Metro, Hospital & Railway jobs — straight to your WhatsApp. Never miss a new opening!</p>
+    <a href="https://whatsapp.com/channel/0029Vas5xvZKbYMFGb9Gh53k" target="_blank" class="wa-join-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.853L.057 23.57l5.895-1.495A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.058-1.406l-.361-.216-3.743.95.985-3.635-.236-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      Join WhatsApp Channel — Free
+    </a>
+    <div class="wa-features">
+      <div class="wa-feature">✅ Daily Updates</div>
+      <div class="wa-feature">✅ Govt + Private Jobs</div>
+      <div class="wa-feature">✅ PAN India</div>
+      <div class="wa-feature">✅ Completely Free</div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-bg" id="categories">
+  <div class="section-header">
+    <div class="section-tag">Explore</div>
+    <h2 class="section-title">Job Categories</h2>
+    <p class="section-subtitle">Browse opportunities across industries and find what suits your skills best</p>
+  </div>
+  <div class="cat-grid">
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Office')"><span class="cat-icon">🏢</span><div class="cat-name">Office Jobs</div><div class="cat-count">Admin · HR · Finance</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('IT')"><span class="cat-icon">💻</span><div class="cat-name">IT Jobs</div><div class="cat-count">Dev · Network · Support</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('BPO')"><span class="cat-icon">📞</span><div class="cat-name">BPO / Telecalling</div><div class="cat-count">Customer Care · Sales</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Factory')"><span class="cat-icon">🏭</span><div class="cat-name">Factory Jobs</div><div class="cat-count">Operator · Technician</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Hospital')"><span class="cat-icon">🏥</span><div class="cat-name">Hospital Jobs</div><div class="cat-count">Nursing · Lab · X-Ray</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Retail')"><span class="cat-icon">🛒</span><div class="cat-name">Retail Jobs</div><div class="cat-count">Sales · Cashier · Store</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Logistics')"><span class="cat-icon">🚚</span><div class="cat-name">Logistics</div><div class="cat-count">Warehouse · Delivery</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Hotel')"><span class="cat-icon">🏨</span><div class="cat-name">Hotel / Hospitality</div><div class="cat-count">Guest · Front Office</div></a>
+    <a href="#jobs" class="cat-card" onclick="filterJobs('Govt')"><span class="cat-icon">🏛️</span><div class="cat-name">Govt / Metro / Bank</div><div class="cat-count">DMRC · Railway · Banks</div></a>
+  </div>
+</section>
+
+<!-- JOBS -->
+<section class="jobs-section" id="jobs">
+  <div class="section-header">
+    <div class="section-tag">Opportunities</div>
+    <h2 class="section-title">Browse Job Listings (A–Z)</h2>
+    <p class="section-subtitle">All roles — search by name, industry, or category</p>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="jobSearch" placeholder="Search e.g. Accountant, Developer, Metro..." oninput="searchJobs()">
+    <button onclick="searchJobs()">Search</button>
+  </div>
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="setFilter('All',this)">All</button>
+    <button class="filter-tab" onclick="setFilter('Office',this)">Office</button>
+    <button class="filter-tab" onclick="setFilter('IT',this)">IT</button>
+    <button class="filter-tab" onclick="setFilter('BPO',this)">BPO</button>
+    <button class="filter-tab" onclick="setFilter('Factory',this)">Factory</button>
+    <button class="filter-tab" onclick="setFilter('Hospital',this)">Hospital</button>
+    <button class="filter-tab" onclick="setFilter('Retail',this)">Retail</button>
+    <button class="filter-tab" onclick="setFilter('Logistics',this)">Logistics</button>
+    <button class="filter-tab" onclick="setFilter('Hotel',this)">Hotel</button>
+    <button class="filter-tab" onclick="setFilter('Govt',this)">Govt / Metro / Bank</button>
+  </div>
+  <div class="jobs-grid" id="jobsGrid"></div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-header">
+    <div class="section-tag">What We Offer</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">End-to-end support for your career journey — from resume to placement</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-img">🎯</div>
+      <div class="service-body">
+        <h3>Job Placement</h3>
+        <p>We match your profile with the right employer across Delhi NCR and PAN India with verified openings in 100+ companies.</p>
+        <div class="job-rating"><span class="stars">★★★★★</span><span class="rating-text">4.9 Rating</span></div>
+        <a href="tel:+917011271510" class="btn-consult" style="display:block;text-align:center;text-decoration:none;">Call to Enquire</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img">📄</div>
+      <div class="service-body">
+        <h3>Resume Building</h3>
+        <p>Professional resume crafted to ATS standards, tailored for your target industry to maximize interview calls.</p>
+        <div class="job-rating"><span class="stars">★★★★★</span><span class="rating-text">4.8 Rating</span></div>
+        <a href="tel:+917011271510" class="btn-consult" style="display:block;text-align:center;text-decoration:none;">Call to Enquire</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img">🤝</div>
+      <div class="service-body">
+        <h3>Career Counselling</h3>
+        <p>One-on-one sessions to help you choose the right career path, understand market demand, and set achievable goals.</p>
+        <div class="job-rating"><span class="stars">★★★★☆</span><span class="rating-text">4.7 Rating</span></div>
+        <a href="tel:+917011271510" class="btn-consult" style="display:block;text-align:center;text-decoration:none;">Call to Enquire</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img">📢</div>
+      <div class="service-body">
+        <h3>Daily Job Updates</h3>
+        <p>Fresh vacancies — private sector, government, metro and bank jobs — delivered daily via our WhatsApp Channel.</p>
+        <div class="job-rating"><span class="stars">★★★★★</span><span class="rating-text">5.0 Rating</span></div>
+        <a class="btn-consult" style="display:block;text-align:center;text-decoration:none;background:#25d366;" href="https://whatsapp.com/channel/0029Vas5xvZKbYMFGb9Gh53k" target="_blank">Join WhatsApp Channel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES STRIP -->
+<section class="industries-strip">
+  <h2>Industries We Serve</h2>
+  <div class="industry-tags">
+    <span class="industry-tag">🏢 Office & Admin</span>
+    <span class="industry-tag">🏭 Factory / Manufacturing</span>
+    <span class="industry-tag">🏥 Hospital / Healthcare</span>
+    <span class="industry-tag">🛒 Retail</span>
+    <span class="industry-tag">🚚 Logistics & Delivery</span>
+    <span class="industry-tag">💻 IT & Software</span>
+    <span class="industry-tag">📞 BPO & Call Centre</span>
+    <span class="industry-tag">🏨 Hotel & Hospitality</span>
+    <span class="industry-tag">✈️ Airport Services</span>
+    <span class="industry-tag">📦 Warehouse</span>
+    <span class="industry-tag">🏦 Banking & Finance</span>
+    <span class="industry-tag">🏛️ Government / PSU</span>
+    <span class="industry-tag">🚇 Delhi Metro (DMRC)</span>
+    <span class="industry-tag">🚂 Indian Railways / IRCTC</span>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-bg" id="faq">
+  <div class="section-header">
+    <div class="section-tag">Help</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Everything you need to know about Heritage Consultancy</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does Heritage Consultancy cover jobs across India? <span class="arrow">+</span></button>
+      <div class="faq-a">Yes! We cover jobs PAN India — Delhi NCR, Mumbai, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all other cities. Government, Metro, Bank, Railway, Hospital and private sector jobs are available nationwide.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What types of jobs does Heritage Consultancy offer? <span class="arrow">+</span></button>
+      <div class="faq-a">We offer placements across Private Sector (Office, IT, BPO, Retail, Factory, Hospital, Hotel, Logistics), Government Contractual Jobs, Delhi Metro (Token Operator, Loco Pilot, CFA), Bank Jobs (Kotak, ICICI, HDFC, AXIS, Muthoot Finance — Assistant Manager & Deputy Manager), AIIMS & Hospital Jobs, Indian Railway / IRCTC, TATA Power / IGL Meter Reading, FSSAI, and Work From Home roles.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I get started with Heritage Consultancy? <span class="arrow">+</span></button>
+      <div class="faq-a">Visit our office at Gate No. 2, Near Mother Divine School, Sector 4, Rohini, New Delhi — Monday to Saturday, 11 AM to 2 PM. You can also call or WhatsApp us at +91 7011271510 before your visit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is an office visit mandatory? <span class="arrow">+</span></button>
+      <div class="faq-a">Yes, office visit is mandatory for all placement services. This helps us understand your profile, guide you correctly, and match you with the most suitable job openings. Walk-ins are welcome during office hours (11 AM – 2 PM, Mon–Sat).</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What documents should I bring when visiting? <span class="arrow">+</span></button>
+      <div class="faq-a">Please bring: an updated resume/CV, Aadhaar card (or any government photo ID), educational certificates, experience letters (if applicable), and a recent passport-size photograph.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How quickly can I get a job placement? <span class="arrow">+</span></button>
+      <div class="faq-a">It depends on your profile and availability of openings. For many candidates, interviews are scheduled within 2–5 working days. Some placements happen the same week. Government and Metro roles follow their own official recruitment timelines.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you place freshers as well? <span class="arrow">+</span></button>
+      <div class="faq-a">Yes! We have openings for freshers, candidates with work gaps, and experienced professionals alike. Roles are available for 10th pass, 12th pass, graduates and postgraduates across all salary levels.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How can I stay updated on new job openings? <span class="arrow">+</span></button>
+      <div class="faq-a">Join our official WhatsApp Channel for daily job alerts: https://whatsapp.com/channel/0029Vas5xvZKbYMFGb9Gh53k — New government, private, bank, metro and hospital vacancies are posted every day. It's completely free to join.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is the nearest metro to your office? <span class="arrow">+</span></button>
+      <div class="faq-a">The nearest metro station is Rohini West Metro Station (Yellow Line / Line 5). Our office — The Heritage Company, near Mother Divine School, Sector 4, Rohini — is a short walk from the station exit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What bank profiles do you place for? <span class="arrow">+</span></button>
+      <div class="faq-a">We actively place candidates as Assistant Manager and Deputy Manager in Kotak Mahindra Bank, ICICI Bank, HDFC Bank, AXIS Bank, and Muthoot Finance. These are permanent roles with reputed private sector banks. Visit our office for current openings.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2>Ready to Start Your Career Journey?</h2>
+  <p>Visit our office or reach us directly — <strong>office visit is mandatory</strong> for placement</p>
+  <a href="#contact" class="btn-white">📍 Find Our Office</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visit Our Office</h2>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Address</h4>
+          <p>The Heritage Company<br>Gate No. 2, Near Mother Divine School<br>Sector 4, Rohini, New Delhi</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <h4>Office Hours</h4>
+          <p>Monday – Saturday<br>11:00 AM – 2:00 PM</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Phone / WhatsApp</h4>
+          <p><a href="tel:+917011271510">+91 7011271510</a></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🚇</div>
+        <div>
+          <h4>Nearest Metro</h4>
+          <p>Rohini West Metro Station<br><em style="opacity:0.7;font-size:0.85rem;">Office visit mandatory</em></p>
+        </div>
+      </div>
+      <div class="map-card">
+        <h4>Weekly Schedule</h4>
+        <div class="timing-row"><span>Monday – Friday</span><span>✅ Open (11 AM – 2 PM)</span></div>
+        <div class="timing-row"><span>Saturday</span><span>✅ Open (11 AM – 2 PM)</span></div>
+        <div class="timing-row"><span>Sunday</span><span>❌ Closed</span></div>
+      </div>
+    </div>
+
+    <div class="reach-box">
+      <h3>Reach Us Directly</h3>
+      <p>Choose any of the options below to connect with Heritage Consultancy. Our team is available during office hours.</p>
+
+      <a href="https://wa.me/917011271510?text=Hi%2C%20I%20want%20to%20consult%20about%20job%20placement%20at%20Heritage%20Consultancy." target="_blank" class="reach-action">
+        <div class="reach-action-icon wa">💬</div>
+        <div><strong>WhatsApp Us</strong><span>Tap to open chat — +91 7011271510</span></div>
+      </a>
+      <a href="tel:+917011271510" class="reach-action">
+        <div class="reach-action-icon call">📞</div>
+        <div><strong>Call Us</strong><span>+91 7011271510 (Mon–Sat, 11 AM–2 PM)</span></div>
+      </a>
+      <a href="https://whatsapp.com/channel/0029Vas5xvZKbYMFGb9Gh53k" target="_blank" class="reach-action">
+        <div class="reach-action-icon ch">📲</div>
+        <div><strong>Join WhatsApp Channel</strong><span>Daily job vacancy updates — free</span></div>
+      </a>
+
+      <div class="office-note">
+        ⚠️ <strong>Office Visit Mandatory</strong> — All placement services require an in-person visit to our office at Sector 4, Rohini, Delhi. Please carry your CV and a government photo ID.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="/mnt/user-data/uploads/1776619121904_WhatsApp_Image_2026-04-19_at_10_36_17_PM.jpeg" alt="Heritage Consultancy" onerror="this.style.display='none'">
+  <p>
+    <strong style="color:rgba(255,255,255,0.85);">The Heritage Company</strong><br>
+    Gate No. 2, Near Mother Divine School, Sector 4, Rohini, New Delhi<br>
+    📞 <a href="tel:+917011271510">+91 7011271510</a> &nbsp;|&nbsp;
+    💬 <a href="https://whatsapp.com/channel/0029Vas5xvZKbYMFGb9Gh53k" target="_blank">WhatsApp Channel</a><br><br>
+    © 2026 Heritage Consultancy. All rights reserved. | Your Career Partner — PAN India
+  </p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── JOB DATA ──
+const jobs = [
+  // Government / Metro / Bank (shown first with Govt category)
+  { name:"Govt Contractual Jobs", icon:"🏛️", industry:"Govt / PSU", category:"Govt", desc:"Contractual positions in central & state government departments. PAN India. Multiple roles available.", rating:5.0 },
+  { name:"Delhi Metro – Token Operator / Loco Pilot / CFA", icon:"🚇", industry:"Delhi Metro (DMRC)", category:"Govt", desc:"DMRC roles: Token Operator, Loco Pilot and Customer Facility Available (CFA). Prestigious government transport jobs.", rating:5.0 },
+  { name:"Bank Jobs – Kotak / ICICI / HDFC / AXIS / Muthoot", icon:"🏦", industry:"Banking", category:"Govt", desc:"Assistant Manager & Deputy Manager roles in leading private banks: Kotak Mahindra, ICICI, HDFC, AXIS & Muthoot Finance.", rating:5.0 },
+  { name:"AIIMS – All India Hospital Jobs", icon:"🏥", industry:"Hospital / Govt", category:"Govt", desc:"All AIIMS campuses across India — nursing staff, lab technician, administrative and technical support positions.", rating:5.0 },
+  { name:"Indian Railway / IRCTC Jobs", icon:"🚂", industry:"Railway / Govt", category:"Govt", desc:"Railway recruitment across multiple zones. Station staff, technical roles and IRCTC service positions PAN India.", rating:5.0 },
+  { name:"TATA Power / IGL Meter Reader", icon:"⚡", industry:"Govt / PSU", category:"Govt", desc:"Meter reading and field executive roles with TATA Power and Indraprastha Gas Limited (IGL) across Delhi-NCR.", rating:4.8 },
+  { name:"FSSAI Jobs", icon:"🌾", industry:"Govt / Food Safety", category:"Govt", desc:"Food Safety and Standards Authority of India — technical officer, analyst and administrative roles nationwide.", rating:4.8 },
+  { name:"Work From Home Jobs", icon:"🏠", industry:"Remote / WFH", category:"Govt", desc:"Genuine work-from-home roles in data entry, customer support, digital marketing and content writing.", rating:4.6 },
+  // Office
+  { name:"Accountant", icon:"💼", industry:"Office", category:"Office", desc:"Manage books, GST filings, Tally entries and financial reporting for private firms.", rating:4.7 },
+  { name:"Admin Executive", icon:"🗂️", industry:"Office", category:"Office", desc:"Handle day-to-day office operations, scheduling, vendor coordination and filing.", rating:4.5 },
+  { name:"Area Sales Manager", icon:"📈", industry:"Office", category:"Office", desc:"Lead regional sales teams, drive revenue targets and manage key accounts.", rating:4.8 },
+  { name:"Back Office Executive", icon:"🖥️", industry:"Office", category:"Office", desc:"Data processing, record management, MIS and backend operations support.", rating:4.4 },
+  { name:"Business Development Executive", icon:"🤝", industry:"Office", category:"Office", desc:"Generate leads, build client relationships, and expand market presence.", rating:4.6 },
+  { name:"Computer Operator", icon:"💻", industry:"Office", category:"Office", desc:"Operate data entry, manage databases and generate office reports daily.", rating:4.3 },
+  { name:"Data Entry Operator", icon:"⌨️", industry:"Office", category:"Office", desc:"High-speed data entry, form processing and digital record management.", rating:4.2 },
+  { name:"Executive Assistant", icon:"📋", industry:"Office", category:"Office", desc:"Support senior management with scheduling, travel, correspondence and reports.", rating:4.6 },
+  { name:"Field Officer", icon:"🏃", industry:"Office", category:"Office", desc:"On-ground sales, client visits, documentation and field reporting tasks.", rating:4.3 },
+  { name:"Finance Executive", icon:"📊", industry:"Office", category:"Office", desc:"Budget planning, financial analysis, reporting and accounts payable/receivable.", rating:4.7 },
+  { name:"HR Executive", icon:"👥", industry:"Office", category:"Office", desc:"Recruitment, onboarding, payroll, employee engagement and HR compliance.", rating:4.6 },
+  { name:"Insurance Advisor", icon:"🛡️", industry:"Office", category:"Office", desc:"Advise clients on insurance products, handle claims and generate business.", rating:4.4 },
+  { name:"Junior Accountant", icon:"🧾", industry:"Office", category:"Office", desc:"Support senior accountants with bookkeeping, invoicing and reconciliation.", rating:4.3 },
+  { name:"MIS Executive", icon:"📉", industry:"Office", category:"Office", desc:"Maintain management information systems, generate daily/weekly reports.", rating:4.4 },
+  { name:"Office Assistant / Office Boy", icon:"📁", industry:"Office", category:"Office", desc:"Admin support including data entry, scanning, printing, filing and coordination.", rating:4.2 },
+  { name:"Personal Secretary", icon:"📓", industry:"Office", category:"Office", desc:"Manage executive calendars, correspondence, meetings and confidential files.", rating:4.6 },
+  { name:"Purchase Executive", icon:"🛒", industry:"Office", category:"Office", desc:"Source vendors, raise POs, negotiate prices and manage inventory procurement.", rating:4.5 },
+  { name:"Receptionist / Front Office Executive", icon:"📠", industry:"Office", category:"Office", desc:"Manage front desk, welcome visitors, handle calls and coordinate appointments.", rating:4.4 },
+  { name:"Relationship Manager", icon:"🤝", industry:"Office", category:"Office", desc:"Maintain client relationships, cross-sell products and handle escalations.", rating:4.6 },
+  { name:"Sales Executive", icon:"💰", industry:"Office", category:"Office", desc:"B2B/B2C sales, lead conversion, product demos and revenue generation.", rating:4.5 },
+  { name:"Security Guard", icon:"🛡️", industry:"Office", category:"Office", desc:"Ensure safety and access control at offices, malls and residential complexes.", rating:4.1 },
+  { name:"Vendor Coordinator", icon:"📋", industry:"Office", category:"Office", desc:"Coordinate with vendors, track deliveries, resolve issues and maintain records.", rating:4.4 },
+  { name:"Zonal Sales Manager", icon:"🗺️", industry:"Office", category:"Office", desc:"Drive sales across a geographic zone, manage teams and achieve monthly targets.", rating:4.8 },
+  { name:"Operation Executive", icon:"⚙️", industry:"Office", category:"Office", desc:"Manage end-to-end business operations, SOP compliance and process improvement.", rating:4.5 },
+  { name:"Export Executive", icon:"✈️", industry:"Office", category:"Office", desc:"Handle export documentation, customs clearance, freight booking and compliance.", rating:4.5 },
+  // IT
+  { name:"Digital Marketing Executive", icon:"📱", industry:"IT", category:"IT", desc:"SEO, social media management, paid ads and content marketing for brands.", rating:4.7 },
+  { name:"Graphic Designer", icon:"🎨", industry:"IT", category:"IT", desc:"Create visual content, branding materials, social media graphics using design tools.", rating:4.6 },
+  { name:"IT Support Executive", icon:"🖥️", industry:"IT", category:"IT", desc:"Troubleshoot hardware/software issues, provide L1 support and maintain IT assets.", rating:4.5 },
+  { name:"Java Developer", icon:"☕", industry:"IT", category:"IT", desc:"Design and develop Java-based applications, APIs and backend systems.", rating:4.8 },
+  { name:"Network Engineer", icon:"🌐", industry:"IT", category:"IT", desc:"Design, configure and maintain LAN/WAN networks, routers and firewalls.", rating:4.7 },
+  { name:"Quality Analyst", icon:"🔍", industry:"IT", category:"IT", desc:"Test software, find bugs, create test cases and ensure product quality.", rating:4.6 },
+  { name:"UI Designer", icon:"🎨", industry:"IT", category:"IT", desc:"Design user interfaces for web and mobile apps using Figma or Adobe XD.", rating:4.7 },
+  { name:"Video Editor", icon:"🎬", industry:"IT", category:"IT", desc:"Edit videos, apply effects, color grading and audio sync for digital content.", rating:4.6 },
+  { name:"Web Developer", icon:"🌐", industry:"IT", category:"IT", desc:"Build responsive websites and web apps using HTML, CSS, JS and frameworks.", rating:4.8 },
+  // BPO
+  { name:"Customer Care Executive", icon:"📞", industry:"BPO", category:"BPO", desc:"Handle inbound/outbound calls, resolve queries, and ensure customer satisfaction.", rating:4.5 },
+  { name:"Team Leader", icon:"👑", industry:"BPO", category:"BPO", desc:"Lead a team of agents, monitor KPIs, conduct coaching and handle escalations.", rating:4.7 },
+  { name:"Telecaller", icon:"📞", industry:"BPO", category:"BPO", desc:"Make outbound calls for sales, lead generation, surveys or customer service.", rating:4.2 },
+  // Factory
+  { name:"Electrician", icon:"⚡", industry:"Factory", category:"Factory", desc:"Install, maintain and repair electrical systems in commercial and industrial units.", rating:4.4 },
+  { name:"Helper", icon:"🔧", industry:"Factory", category:"Factory", desc:"Assist skilled workers in factory, construction or warehouse environments.", rating:4.1 },
+  { name:"Machine Operator", icon:"⚙️", industry:"Factory", category:"Factory", desc:"Operate CNC, lathe or other production machines in manufacturing units.", rating:4.3 },
+  { name:"Quality Checker", icon:"✅", industry:"Factory", category:"Factory", desc:"Inspect products for defects, ensure quality standards in production lines.", rating:4.4 },
+  { name:"Technician", icon:"🔧", industry:"Factory", category:"Factory", desc:"Repair and maintain mechanical, electrical or electronic equipment.", rating:4.5 },
+  { name:"Utility Staff", icon:"🧰", industry:"Factory", category:"Factory", desc:"Provide support across departments including maintenance, cleaning and safety.", rating:4.0 },
+  // Hospital
+  { name:"Lab Assistant", icon:"🔬", industry:"Hospital", category:"Hospital", desc:"Support lab technicians in sample collection, testing and report generation.", rating:4.4 },
+  { name:"Nursing Staff", icon:"🏥", industry:"Hospital", category:"Hospital", desc:"Patient care, medication administration, vitals monitoring in hospitals.", rating:4.8 },
+  { name:"X-Ray Technician", icon:"🩻", industry:"Hospital", category:"Hospital", desc:"Operate X-ray and imaging equipment in diagnostic centers and hospitals.", rating:4.6 },
+  // Retail
+  { name:"Cashier", icon:"💳", industry:"Retail", category:"Retail", desc:"Handle POS billing, cash management, and customer checkout in retail outlets.", rating:4.3 },
+  { name:"Retail Staff", icon:"🏪", industry:"Retail", category:"Retail", desc:"Assist customers on the shop floor, manage stock display and billing.", rating:4.3 },
+  // Logistics
+  { name:"Delivery Boy", icon:"🏍️", industry:"Logistics", category:"Logistics", desc:"Last-mile delivery of packages, parcels and e-commerce orders in city areas.", rating:4.3 },
+  { name:"Godown Supervisor / Yard Supervisor", icon:"🏭", industry:"Logistics", category:"Logistics", desc:"Manage godown/yard operations, stock supervision, and team coordination.", rating:4.3 },
+  { name:"Inventory Executive", icon:"📦", industry:"Logistics", category:"Logistics", desc:"Track stock levels, update inventory systems, conduct audits and cycle counts.", rating:4.4 },
+  { name:"Loader", icon:"📦", industry:"Logistics", category:"Logistics", desc:"Load/unload goods from vehicles, arrange stock in warehouses and godowns.", rating:4.0 },
+  { name:"Logistics Executive", icon:"🚛", industry:"Logistics", category:"Logistics", desc:"Coordinate supply chain, shipment tracking, vendor management and dispatch.", rating:4.5 },
+  { name:"Picker / Packer", icon:"📦", industry:"Logistics", category:"Logistics", desc:"Pick and pack e-commerce orders accurately in warehouses and fulfillment centers.", rating:4.1 },
+  { name:"Store Keeper", icon:"🗃️", industry:"Logistics", category:"Logistics", desc:"Manage inventory, stock records, issue materials and update store registers.", rating:4.3 },
+  { name:"Warehouse Staff", icon:"🏭", industry:"Logistics", category:"Logistics", desc:"Receive, store and dispatch goods; maintain inventory in warehouse facilities.", rating:4.2 },
+  // Hotel
+  { name:"Front Office Executive", icon:"🏢", industry:"Hotel", category:"Hotel", desc:"Greet guests, handle check-in/out, manage reception and phone calls.", rating:4.6 },
+  { name:"Guest Relation Executive", icon:"🌟", industry:"Hotel", category:"Hotel", desc:"Ensure an exceptional experience for guests from arrival to departure.", rating:4.7 },
+  { name:"Housekeeping Staff", icon:"🧹", industry:"Hotel", category:"Hotel", desc:"Maintain cleanliness and hygiene standards in hotels, offices and hospitals.", rating:4.2 },
+  { name:"Kitchen Helper", icon:"🍳", industry:"Hotel", category:"Hotel", desc:"Assist in kitchen operations, food preparation, cleaning and canteen support.", rating:4.0 },
+];
+
+let currentFilter = 'All';
+
+function renderJobs(list) {
+  const grid = document.getElementById('jobsGrid');
+  if (!list.length) {
+    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--gray);padding:40px;">No jobs found. Try a different search or clear filters.</p>';
+    return;
+  }
+  grid.innerHTML = list.map(job => `
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-icon-wrap">${job.icon}</div>
+        <div class="job-info">
+          <h3>${job.name}</h3>
+          <div class="industry">${job.industry}</div>
+        </div>
+      </div>
+      <div class="job-desc">${job.desc}</div>
+      <div class="job-rating">
+        <span class="stars">${'★'.repeat(Math.floor(job.rating))}${job.rating % 1 >= 0.5 ? '½' : ''}</span>
+        <span class="rating-text">${job.rating} Rating</span>
+      </div>
+      <a href="https://wa.me/917011271510?text=Hi%2C%20I%20am%20interested%20in%20${encodeURIComponent(job.name)}%20role.%20Please%20guide%20me." target="_blank" class="btn-consult" style="display:block;text-align:center;text-decoration:none;">Consult Now</a>
+    </div>
+  `).join('');
+}
+
+function setFilter(cat, btn) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterJobs(cat) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-tab').forEach(t => {
+    t.classList.toggle('active', t.textContent.trim() === cat || (cat === 'Govt' && t.textContent.includes('Govt')));
+  });
+  applyFilters();
+  document.getElementById('jobs').scrollIntoView({ behavior: 'smooth' });
+}
+
+function searchJobs() { applyFilters(); }
+
+function applyFilters() {
+  const q = document.getElementById('jobSearch').value.toLowerCase();
+  let filtered = jobs;
+  if (currentFilter !== 'All') filtered = filtered.filter(j => j.category === currentFilter);
+  if (q) filtered = filtered.filter(j => j.name.toLowerCase().includes(q) || j.industry.toLowerCase().includes(q) || j.desc.toLowerCase().includes(q));
+  renderJobs(filtered);
+}
+
+// FAQ
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
+// Nav
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Dark mode
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  document.querySelector('.dark-toggle').textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+}
+
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// Init
+renderJobs(jobs);
+</script>
+</body>
+</html>
